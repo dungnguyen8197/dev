@@ -1,0 +1,38 @@
+// If you want to override variables do it here
+@import "variables";
+
+// If you want to add something do it here
+@import "custom";
+@import "space";
+@import "flex";
+@import "layout";
+@import "icon";
+@import "typography";
+
+html {
+  font-size: 62.5%;
+  word-break: break-word;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", Axis Std, Meiryo, sans-serif;
+  color: var(--dark-blue);
+}
+
+.card-header:not(.content-center) > .c-icon:first-child {
+  margin-right: 0.1rem;
+  margin-top: 0.1rem;
+  vertical-align: top;
+  width: 1.2rem;
+  height: 1.2rem;
+  font-size: 1.2rem;
+}

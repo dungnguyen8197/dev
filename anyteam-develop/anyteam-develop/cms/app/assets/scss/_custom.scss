@@ -1,0 +1,6 @@
+html:not([dir="rtl"]) .was-validated select.form-control:valid,
+html:not([dir="rtl"]) .was-validated select.form-control:invalid,
+html:not([dir="rtl"]) select.form-control.is-valid,
+html:not([dir="rtl"]) select.form-control.is-invalid {
+  background-position: right calc(1.375em + 0.1875rem) center;
+}

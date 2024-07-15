@@ -1,0 +1,9 @@
+POST http://localhost:3000/api/v1/admin/administrators
+Content-Type: application/json
+Authorization: Bearer {Access Token}
+
+{
+  "name": "test",
+  "email": "test@anyteam.jp",
+  "password": "pass"
+}

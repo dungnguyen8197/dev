@@ -1,0 +1,11 @@
+export const registerFailureMessage = '登録に失敗しました。';
+export const updateFailureMessage = '更新に失敗しました。';
+export const updateSuccessMessage = '更新に成功';
+export const registerSuccessMessage = '成功を生み出す';
+export const invalidEmail = 'メールが不正です。';
+export const invalidRequired = 'この項目は必須です。';
+export const unmatchedPassword = '確認パスワードが一致しません。';
+export const invalidPassword = '半角英数字6文字〜50文字で入力';
+export const invalidLength = (length: number) => `このフィールドは${length}文字で入力してください。`;
+export const invalidMaxLength = (length: number) => `このフィールドは${length}文字以下で入力してください。`;
+export const invalidMinLength = (length: number) => `このフィールドは${length}文字以上で入力してください。`;

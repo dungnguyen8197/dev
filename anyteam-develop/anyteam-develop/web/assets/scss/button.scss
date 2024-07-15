@@ -1,0 +1,39 @@
+//button 
+.btn {
+  border-radius: 6px;
+  font-size: 12px;
+  text-align: center;
+  min-height: 47px;
+  padding: 13px 16px;
+  border: none;
+  box-shadow: none;
+  min-width: 65px;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-wide {
+  width: 100%;
+  max-width: 240px;
+}
+.btn-small {
+  border-radius: 2px;
+  min-height: 40px;
+}
+.btn-white {
+  color: var(--primary-color);
+  background: #fff;
+}
+.btn-secondary {
+  color: #fff;
+  background: var(--secondary-color);
+}
+.btn-primary {
+  color: #fff;
+  background: var(--primary-color);
+}
+
+.btn-dark-gray {
+  color: #fff;
+  background: var(--dark-gray-color);
+}

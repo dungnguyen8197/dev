@@ -1,0 +1,5 @@
+{
+  "watch": ["main.ts", "routes", "controllers"],
+  "ext": "ts",
+  "exec": "npx ts-node --project tsconfig.bff.json -r dotenv/config main.ts dotenv_config_path=.env"
+}

@@ -1,0 +1,45 @@
+<header class="header<%= isTop ? ' top' : '' %>">
+  <div class="flex justify-between">
+    <div class="flex items-center">
+      <a class="header__logo" href="/">
+      <img class="d-block sp-only" src="/public/images/common/icon-logo.svg" alt="anyteam logo">
+      <% if (isTop) { %>
+        <img class="d-block pc-tablet-only" src="/public/images/common/icon-logo-white.svg" alt="anyteam logo">
+      <% } else { %>
+        <img class="d-block pc-tablet-only" src="/public/images/common/icon-logo-dark-blue.svg" alt="anyteam logo">
+      <% } %>
+    </a>
+    <ul class="header__links pc-tablet-only">
+      <li class="header__links-item">
+        <a href="/about/" class="header__links-link">ANYTEAMついて</a>
+      </li>
+      <li class="header__links-item">
+        <a href="/#search" class="header__links-link">部活を探す</a>
+      </li>
+      <li class="header__links-item">
+        <a href="/about/faq/" class="header__links-link">お問い合わせ(Q&A)</a>
+      </li>
+    </ul>
+  </div>
+  <!-- off canvas menu -->
+  <div class="pc-tablet-only">
+    <% if (!isAuthen) { %>
+      <div class="flex">
+        <a href="/user/register">
+          <button class="header__button mr-10">
+            会員登録
+          </button>
+        </a>
+        <a href="/user/login">
+          <button class="header__button">
+            ログイン
+          </button>
+        </a>
+      </div>
+      <% } %>  
+    </div>
+    <div class="sp-only">
+      <%- include('canvas-menu.ejs') %>
+    </div>
+  </div>
+</header>

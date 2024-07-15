@@ -1,0 +1,1 @@
+export const ORGANIZATIONS_PER_PAGE = 12;

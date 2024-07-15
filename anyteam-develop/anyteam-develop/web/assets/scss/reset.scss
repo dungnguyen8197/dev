@@ -1,0 +1,35 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Axis Std, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo,
+    sans-serif;
+  font-size: 1.6rem;
+  color: var(--primary-color);
+}
+#app {
+  min-height: calc(100vh - 39px);
+  padding-top: 39px;
+  background-color: var(--white-color);
+  @media screen and (min-width: 768px) {
+    min-height: calc(100vh - 70px);
+    background-color: #FAFAFA;
+    padding-top: 70px;
+    &.top {
+      padding-top: 0; 
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.tabSize": 2,
+		"npm.packageManager": "yarn",
+		"debug.javascript.usePreview": false,
+		"eslint.workingDirectories": ["./api", "./portal", "./web"],
+		"[typescript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"prettier.singleQuote": true,
+		"typescript.updateImportsOnFileMove.enabled": "always",
+		"eslint.format.enable": true,
+		"editor.formatOnSave": true
+	},
+}

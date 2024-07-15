@@ -1,0 +1,7 @@
+POST http://localhost:3000/api/v1/teams/register
+Content-Type: application/json
+Authorization: Bearer {Access Token}
+
+{
+  "name": "TEST"
+}

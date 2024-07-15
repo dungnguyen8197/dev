@@ -1,0 +1,102 @@
+version: '3'
+
+services:
+  api:
+    tty: true
+    build:
+      context: ./api
+    volumes:
+      - ./api:/usr/src/app
+    ports:
+      - 3000:3000
+      - 9229:9229
+    depends_on:
+      - db
+      - dynamodb
+  web:
+    tty: true
+    build:
+      context: ./web
+    volumes:
+      - ./web:/usr/src/app
+    ports:
+      - 3001:3001
+      - 9230:9229
+    depends_on:
+      - redis
+  cms:
+    tty: true
+    build:
+      context: ./cms
+    volumes:
+      - ./cms:/usr/src/app
+    ports:
+      - 3002:3000
+  portal:
+    tty: true
+    build:
+      context: ./portal
+    volumes:
+      - ./portal:/usr/src/app
+    ports:
+      - 3003:3000
+  #web-server:
+  #  tty: true
+  #  build:
+  #    context: ./web-server
+  #  volumes:
+  #    - ./docker/nginx/conf/web:/etc/nginx/conf.d:ro
+  #    - ./api:/var/www/html/api
+  #    - ./web:/var/www/html/web
+  #  ports:
+  #    - 80:80
+  #  depends_on:
+  #    - db
+  #    - dynamodb
+  #    - redis
+  #cms-server:
+  #  tty: true
+  #  build:
+  #    context: ./cms-server
+  #  volumes:
+  #    - ./docker/nginx/conf/cms:/etc/nginx/conf.d:ro
+  #    - ./cms/:/var/www/html
+  #  ports:
+  #    - 81:80
+  db:
+    image: postgres:11-alpine
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: anyteam
+    ports:
+      - 5432:5432
+    volumes:
+      - ./docker/db:/var/lib/postgresql/data
+  dynamodb:
+    image: amazon/dynamodb-local:latest
+    ports:
+      - 8888:8000
+    volumes:
+      - ./docker/dynamodb/data:/home/dynamodb/data
+    command: -jar DynamoDBLocal.jar -dbPath /home/dynamodb/data
+  redis:
+    image: redis:latest
+    ports:
+      - 26379:6379
+    volumes:
+      - ./docker/redis/data:/data
+  api-docs:
+    image: nginx:latest
+    ports:
+      - 9000:80
+    volumes:
+      - ./docker/nginx/conf/api-docs:/etc/nginx/conf.d:ro
+      - ./api/redoc-static.html/:/var/www/html/redoc-static.html
+  db-docs:
+    image: schemaspy/schemaspy:snapshot
+    volumes:
+      - ./docker/db-docs/output:/output
+      - ./docker/db-docs/schemaspy.properties:/schemaspy.properties
+    depends_on:
+      - db

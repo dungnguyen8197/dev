@@ -1,0 +1,3 @@
+# loginごとに{Access Token}変える
+GET http://localhost:3000/api/v1/notification/reads
+Authorization: Bearer {Access Token}

@@ -1,0 +1,1 @@
+export const API_STATUS_CONFLICT = 409; // The HTTP 409 Conflict response status code

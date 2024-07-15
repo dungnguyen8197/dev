@@ -1,0 +1,17 @@
+@media screen and (min-width: 768px) {
+  .sp-only {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .pc-tablet-only {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .pc-only {
+    display: none;
+  }  
+}

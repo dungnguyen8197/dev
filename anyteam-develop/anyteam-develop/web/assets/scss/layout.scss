@@ -1,0 +1,84 @@
+// layout
+.container {
+  padding: 16px;
+}
+.section-container {
+  width: 100%;
+  margin: 0 auto;
+  padding-right: 16px;
+  padding-left: 16px;
+
+  @media screen and (min-width: 768px) {
+    max-width: 720px;
+  }
+
+  @media screen and (min-width: 992px) {
+    max-width: 960px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 1140px;
+  }
+}
+
+.auth-container {
+  @extend .section-container;
+  padding-left: 0;
+  padding-right: 0;
+  min-height: calc(100vh - 112px);
+  @media screen and (min-width: 768px) {
+    min-height: calc(100vh - 421px);
+  }
+  @media screen and (max-width: 767px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-color);
+  }
+}
+
+.wallet-container {
+  @extend .section-container;
+  padding-left: 0;
+  padding-right: 0;
+  @media screen and (min-width: 768px) {
+    max-width: 375px;
+  }
+}
+
+.user {
+  &-container {
+    @extend .section-container;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    @media screen and (min-width: 768px) {
+      margin-top: 40px;
+    }
+  }
+
+  &-content {
+    @media screen and (min-width: 992px) {
+      margin-left: 250px;
+      padding-left: 16px;
+      padding-right: 16px;
+      margin-right: 50px;
+    }
+  }
+
+  &-sidebar {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 250px;
+    @media screen and (max-width: 991px) {
+      display: none;
+    }
+  }
+}
+
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

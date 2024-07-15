@@ -1,0 +1,126 @@
+<%
+const loginMenu = [
+  {
+    name: "部活を探す",
+    link: "/#search"
+  },
+  {
+    name: "ANYTEAMとは",
+    link: "/about/"
+  },
+  {
+    name: "支援の流れ",
+    link: "/about/support/",
+  },
+  {
+    name: "マイページ",
+    link: "/user/"
+  },
+  {
+    name: "特定商取引法に基づく表記",
+    link: "/about/commercial-transactions/"
+  },
+  {
+    name: "利用規約",
+    link: "/about/terms/"
+  },
+  {
+    name: "プライバシーポリシー",
+    link: "/about/privacy/"
+  },
+  {
+    name: "お問い合わせ",
+    link: "/about/contact/"
+  },
+];
+const notLoginMenu = [
+  {
+    name: "会員登録",
+    link: "/user/register/",
+  },
+  {
+    name: "部活を探す",
+    link: "/#search",
+  },
+  {
+    name: "支援の流れ",
+    link: "/about/support/",
+  },
+  {
+    name: "ANYTEAMとは",
+    link: "/about/",
+  },
+  {
+    name: "特定商取引法に基づく表記",
+    link: "/about/commercial-transactions/",
+  },
+  {
+    name: "利用規約",
+    link: "/about/terms/",
+  },
+  {
+    name: "プライバシーポリシー",
+    link: "/about/privacy/",
+  },
+  {
+    name: "お問い合わせ",
+    link: "/about/contact/",
+  },
+  {
+    name: "ログイン",
+    link: "/user/login"
+  }
+];
+  const mainmenu = locals.isAuthen == true ? loginMenu : notLoginMenu;
+%>
+<div id="com-canvas-menu" class="com-canvas-menu">
+  <div class="com-canvas-menu__overlay"></div>
+  <div class="com-canvas-menu__toggle" id="com-canvas-menu__toggle">
+    <div class="btn-open">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <ul class="com-canvas-menu__items">
+    <% mainmenu.forEach(function(menu){ %>
+      <li class="com-canvas-menu__item">
+        <a href="<%= menu.link%>" class="com-canvas-menu__link" onclick="toogleClass();">
+          <span class="com-canvas-menu__name"><%= menu.name %></span>
+        </a>
+      </li>
+    <% }); %>
+    <% if (locals.isAuthen == true) { %>
+      <li class="com-canvas-menu__item">
+        <a href="#" class="com-canvas-menu__link" onclick="doLogout();">
+          <span class="com-canvas-menu__name">ログアウト</span>
+        </a>
+      </li>
+    <% } %>
+  </ul>
+</div>
+<script>
+  let menuWrap = document.getElementById('com-canvas-menu');
+  let toggleButton = document.getElementById('com-canvas-menu__toggle');
+  function toogleClass() {
+    menuWrap.classList.toggle("is-open-menu");
+  }
+  toggleButton.onclick = function() {
+    toogleClass()
+  };
+
+  function doLogout() {
+    let xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function() {
+      if (xmlhttp.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
+        if (xmlhttp.status == 200) {
+          window.location.href = "/user/login";
+        }
+      }
+    };
+
+    xmlhttp.open("POST", "/api/user/logout", true);
+    xmlhttp.send();
+  }
+</script>

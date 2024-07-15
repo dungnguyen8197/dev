@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <%- include('common/head.ejs') %> 
+  <body>
+    <!-- Global Config -->
+    <% if (locals.data) { %>
+      <!-- use hidden div instead of script tag to prevent xss  -->
+      <div id="app-data" style="display: none">
+        <%= JSON.stringify(locals.data) %>
+      </div>
+    <% } %>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<%= gtm_container_id %>"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <%- include('layouts/header.ejs', { isAuthen: locals.isAuthen, isTop: locals.isTop }) %>
+    <main id='app' class="main<%= locals.isTop ? ' top': ''%>"></main>
+      
+    <%- include('layouts/footer.ejs') %>
+    <script type="text/javascript" src="<%= script_url %>"></script>
+  </body>
+</html>

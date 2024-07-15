@@ -1,0 +1,29 @@
+$sizes: (
+  "xxs": 1rem,
+  "xs": 1.2rem,
+  "sm": 1.4rem,
+  "md": 1.5rem,
+  "lg": 1.6rem,
+  "xl": 1.8rem,
+  "2xl": 2rem,
+  "3xl": 2.5rem,
+);
+
+@each $key, $val in $sizes {
+  .text-#{$key} {
+    font-size: $val;
+  }
+}
+
+$aligns: (
+  "left": left,
+  "center": center,
+  "right": right,
+  "justify": justify,
+);
+
+@each $key, $val in $aligns {
+  .text-#{$key} {
+    text-align: $val;
+  }
+}

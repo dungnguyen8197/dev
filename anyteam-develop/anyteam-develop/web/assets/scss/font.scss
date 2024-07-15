@@ -1,0 +1,56 @@
+
+// font size
+.text-xs {
+  font-size: 1rem;
+}
+.text-sm {
+  font-size: 1.2rem;
+}
+.text-base {
+  font-size: 1.4rem;
+}
+.font-15 {
+  font-size: 1.5rem;
+}
+.font-18 {
+  font-size: 1.8rem;
+}
+.font-20 {
+  font-size: 2rem;
+}
+// text align
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+// text deco
+.text-deco-none {
+  text-decoration: none;
+}
+.text-underline {
+  text-decoration: underline;
+}
+.text-dark-gray {
+  color: var(--dark-gray-color);
+}
+.text-red,
+.text-danger {
+  color: var(--danger-color);
+}
+.text-primary {
+  color: var(--primary-color);
+}
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+// font-weight
+.text-normal {
+  font-weight: 500;
+}

@@ -1,0 +1,8 @@
+POST http://localhost:3000/api/v1/teams/{team_id}/members/role
+Content-Type: application/json
+Authorization: Bearer {Access Token}
+
+{
+  "member_id": 0,
+  "role_id": 0
+}

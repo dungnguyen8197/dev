@@ -1,0 +1,8 @@
+# loginごとに{Access Token}変える
+POST http://localhost:3000/api/v1/notification/read
+Content-Type: application/json
+Authorization: Bearer {Access Token}
+
+{
+  "notification_id": 1
+}

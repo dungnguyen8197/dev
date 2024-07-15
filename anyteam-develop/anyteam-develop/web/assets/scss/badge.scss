@@ -1,0 +1,26 @@
+.badge {
+  font-size: 0.8rem;
+  border-radius: 3px;
+  padding: 2px 5px;
+}
+.badge-secondary {
+  color: #fff;
+  background: var(--secondary-color);
+}
+.badge-info {
+  color: #fff;
+  background: var(--info-color);
+}
+.badge-gray {
+  color: #fff;
+  background: var(--dark-gray-color);
+}
+.badge-danger {
+  color: #fff;
+  background: var(--danger-color);
+}
+
+.badge-primary {
+  color: #fff;
+  background: var(--primary-color);
+}

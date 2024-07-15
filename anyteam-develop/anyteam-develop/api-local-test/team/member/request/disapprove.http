@@ -1,0 +1,7 @@
+POST http://localhost:3000/api/v1/teams/{team_id}/members/requests/disapprove
+Content-Type: application/json
+Authorization: Bearer {Access Token}
+
+{
+  "user_id": 1
+}

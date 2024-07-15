@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "sourceMap": true,
+    "target": "ES5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "types": ["node", "multer"],
+    "outDir": "./dist",
+  },
+  "include": [
+    "main.ts",
+    "routes/**/*",
+    "controllers/**/*",
+    "middlewares/**/*",
+    "helpers/**/*",
+    "types/**/*"
+  ]
+}
